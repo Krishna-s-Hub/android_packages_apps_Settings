@@ -34,7 +34,6 @@ import androidx.preference.PreferenceScreen;
 import com.android.internal.util.custom.PixelDeviceRepository;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.development.DeveloperOptionAwareMixin;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -49,8 +48,7 @@ import java.util.Set;
  * Package picker for TrickyStore targets and Pixel-prop
  * targets. Each mode writes the setting format its service parses.
  */
-public abstract class SpoofAppListFragment extends SettingsPreferenceFragment
-        implements DeveloperOptionAwareMixin {
+public abstract class SpoofAppListFragment extends SettingsPreferenceFragment {
 
     enum Mode { TRICKY, PIXEL }
 

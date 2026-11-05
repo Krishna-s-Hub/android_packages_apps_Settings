@@ -27,16 +27,14 @@ import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.development.DeveloperOptionAwareMixin;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.PrimarySwitchPreference;
-import com.android.settingslib.development.DevelopmentSettingsEnabler;
 import com.android.settingslib.search.SearchIndexable;
 
 import org.json.JSONObject;
 
 @SearchIndexable
-public class SpoofingSettings extends DashboardFragment implements DeveloperOptionAwareMixin {
+public class SpoofingSettings extends DashboardFragment {
     private static final String TAG = "SpoofingSettings";
 
     @Override
@@ -157,10 +155,5 @@ public class SpoofingSettings extends DashboardFragment implements DeveloperOpti
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.spoofing_settings) {
-                @Override
-                protected boolean isPageSearchEnabled(android.content.Context context) {
-                    return DevelopmentSettingsEnabler.isDevelopmentSettingsEnabled(context);
-                }
-            };
+            new BaseSearchIndexProvider(R.xml.spoofing_settings);
 }

@@ -33,9 +33,7 @@ import androidx.preference.Preference;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.development.DeveloperOptionAwareMixin;
 import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settingslib.development.DevelopmentSettingsEnabler;
 import com.android.settingslib.search.SearchIndexable;
 
 import java.io.BufferedInputStream;
@@ -46,7 +44,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
 @SearchIndexable
-public class TrickyStoreSettings extends DashboardFragment implements DeveloperOptionAwareMixin {
+public class TrickyStoreSettings extends DashboardFragment {
     private static final String TAG = "TrickyStoreSettings";
 
     private final ActivityResultLauncher<String[]> mKeyboxImport =
@@ -320,10 +318,5 @@ public class TrickyStoreSettings extends DashboardFragment implements DeveloperO
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.trickystore_settings) {
-                @Override
-                protected boolean isPageSearchEnabled(android.content.Context context) {
-                    return DevelopmentSettingsEnabler.isDevelopmentSettingsEnabled(context);
-                }
-            };
+            new BaseSearchIndexProvider(R.xml.trickystore_settings);
 }
