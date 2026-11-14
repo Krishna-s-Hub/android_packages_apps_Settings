@@ -177,6 +177,13 @@
             <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </Preference>
 
+        <Preference
+            android:key="spoofing_settings"
+            android:title="@string/spoofing_title"
+            android:summary="@string/spoofing_summary"
+            android:icon="@drawable/ic_settings_security"
+            android:fragment="com.android.settings.system.spoof.SpoofingSettings" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
